@@ -29,6 +29,7 @@ import ip from 'ip';
 import semver from 'semver';
 import errors from './errors';
 import AddrValidator from './addr_validator';
+import normalizeConnectArgs from './net-normalize-connect-args';
 
 // Wraps one of the stdlib's HTTP(S)? modules to do paranoid checks on connect.
 const safeModuleWrapper = (oldModule, connectionFunc) => {
@@ -156,7 +157,7 @@ function safeConnectionWrapper(fn, wrappingSafeConnect) {
   wrappingSafeConnect = (wrappingSafeConnect || false);
 
   return function safeConnectionWrappedFn() { // eslint-disable-line max-statements
-    const args = net._normalizeConnectArgs(arguments);
+    const args = normalizeConnectArgs(arguments);
     const options = args[0];
 
     // We smuggled our validator through localAddress

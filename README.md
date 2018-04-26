@@ -1,7 +1,9 @@
-# paranoid-request
+# @naturalatlas/paranoid-request
 
 An SSRF-preventing wrapper around Node's request module, as well as the
 lower-level `http` and `https` modules.
+
+This is a fork of Uber's [paranoid-request](https://github.com/uber-common/paranoid-request) module that adds Node 7+ support. Feel free to use this fork, though hopefully these changes will be merged upstream.
 
 ## Overview
 

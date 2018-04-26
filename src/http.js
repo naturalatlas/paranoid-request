@@ -22,10 +22,11 @@ import http from 'http';
 import net from 'net';
 import util from 'util';
 import wrapperShared from './_wrapper_shared';
+import normalizeConnectArgs from './net-normalize-connect-args';
 
 // Use our custom connection function that won't need a synchronous DNS lookup
 function safeConnectionFunc() {
-  const args = net._normalizeConnectArgs(arguments);
+  const args = normalizeConnectArgs(arguments);
   const options = args[0];
   const s = new net.Socket(args[0]);
   const newOptions = util._extend({}, options);

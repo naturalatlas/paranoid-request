@@ -40,7 +40,8 @@
     "__dirname": false,
     "__filename": false,
     "require": false,
-    "module": false
+    "module": false,
+    "process": true
   },
   "rules": {
     "no-alert": 2,
