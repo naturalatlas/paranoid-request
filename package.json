@@ -70,8 +70,5 @@
     "dist/*.map",
     "package.json",
     "LICENSE"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  }
+  ]
 }

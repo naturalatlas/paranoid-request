@@ -12,7 +12,8 @@ else
 	npm install
 	npm test
 	npm version $(version)
-	npm publish --access public --registry https://registry.npmjs.org/
+	npm publish # to private registry
+	npm publish --access=public --"@naturalatlas:registry=https://registry.npmjs.org/"
 	git push origin master
 	git push origin --tags
 endif
