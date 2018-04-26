@@ -1,9 +1,15 @@
 # @naturalatlas/paranoid-request
 
+[![](https://travis-ci.org/naturalatlas/paranoid-request.svg?branch=master)](https://travis-ci.org/naturalatlas/paranoid-request)
+
 An SSRF-preventing wrapper around Node's request module, as well as the
 lower-level `http` and `https` modules.
 
-This is a fork of Uber's [paranoid-request](https://github.com/uber-common/paranoid-request) module that adds Node 7+ support. Feel free to use this fork, though hopefully these changes will be merged upstream.
+*This is a fork of Uber's [paranoid-request](https://github.com/uber-common/paranoid-request) module that adds Node 7+ support. Feel free to use this fork, though hopefully these changes will be merged upstream.*
+
+```sh
+$ npm install @naturalatlas/paranoid-request --save
+```
 
 ## Overview
 
@@ -25,7 +31,7 @@ that we will emit an 'error' event with an `UnacceptableAddressError` when we
 can't find a suitable address.
 
 ```javascript
-var paranoid = require("paranoid-request");
+var paranoid = require("@naturalatlas/paranoid-request");
 
 // These two will be blocked
 paranoid.get("http://localhost/", function(err, res, body) {
@@ -49,7 +55,7 @@ If you want a custom set of validation rules, you can also roll your
 own version of `paranoid-request`:
 
 ```javascript
-var paranoid = require("paranoid-request");
+var paranoid = require("@naturalatlas/paranoid-request");
 
 // example.com's IP
 var exampleComIp = "93.184.216.34";
@@ -76,12 +82,6 @@ and `https` as well via `require("paranoid-request").httpModule` and
 
 * `npm install`
 * `npm test`
-
-## Installation
-
-```
-npm install paranoid-request
-```
 
 ## Development
 
